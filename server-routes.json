@@ -1,0 +1,3 @@
+{
+  "/contacts/:id/addresses": "/addresses?contactId=:id"
+}

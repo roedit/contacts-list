@@ -1,26 +1,59 @@
-# ContactsList
+# contacts-list
+
+- [contacts-list](#contacts-list)
+  - [Introduction](#introduction)
+  - [Quick Start](#quick-start)
+  - [Documentation](#documentation)
+    - [Folder structure](#folder-structure)
+    - [Development steps](#development-steps)
+
+## Introduction
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
 
-## Development server
+This is a simple [Angular](https://angular.io/) application using [rxjs](https://www.learnrxjs.io/). 
+The UI it's using [Material-ui](https://material.angular.io/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Quick Start
 
-## Code scaffolding
+```bash
+# Clone the repository
+git clone https://github.com/roedit/contacts-list.git
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Go inside the directory
+cd contacts-list
 
-## Build
+# Install dependencies
+npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Install json-server
+npm install -g json-server
 
-## Running unit tests
+# Setup the server json file and server routes
+json-server --watch contacts-mock.json --routes server-routes.json
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Start development server
+ng serve
 
-## Running end-to-end tests
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Documentation
+
+### Folder Structure
+
+All the source code will be inside **src** directory. <br/>
+Folder structure it's fallowing the angular recommendation: components, directives, services, pipes <br/>
+Routes are defined at the root level <br/>
+
+### Development Steps
+<ol>
+    <li>Create the initial setup</li>
+    <li>Create the router setup</li>
+    <li>Setup material ui</li>
+    <li>Load and display the list</li>
+    <li>Display the details</li>
+    <li>Setup the navigation</li>
+</ol>
 
 ## Further help
 
