@@ -1,0 +1,12 @@
+.link {
+    color: #ffffff;
+    &.active {
+        background-color: #263238;
+    }
+}
+.icon {
+    height: 22px;
+    width: 22px;
+    font-size: 22px;
+    margin-right: 5px;
+}

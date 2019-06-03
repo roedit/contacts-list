@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-main-layout',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent implements OnInit {
+  @ViewChild('sidenav', {static: true}) sidenav: MatSidenav;
 
-  constructor() { }
+  sideMode: string = 'side';
 
   ngOnInit() {
+    this.sidenav.open()
   }
 
+  toggleNav() {
+    this.sidenav.toggle()
+  }
 }

@@ -1,3 +1,9 @@
-<main>
-  <router-outlet></router-outlet>
-</main>
+<app-toolbar (toggleSidenav)="toggleNav()"></app-toolbar>
+<mat-sidenav-container class="nav-container" fullscreen>
+  <mat-sidenav class="sidenav" #sidenav [mode]="sideMode">
+    <app-navbar></app-navbar>
+  </mat-sidenav>
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</mat-sidenav-container>
