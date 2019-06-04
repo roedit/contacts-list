@@ -1,0 +1,16 @@
+<mat-grid-list cols="2" rowHeight="1:1" gutterSize="10" >
+  <mat-grid-tile>
+    <mat-card class="card">
+      <mat-card-content>
+        <app-contacts-list (selectedContact)="setSelectedContact($event)"></app-contacts-list>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-card class="card">
+      <mat-card-content>
+          <app-contacts-details [contact]="contact"></app-contacts-details>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

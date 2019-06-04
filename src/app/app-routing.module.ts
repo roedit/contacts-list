@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { HomeComponent } from './components/home/home.component';
-import { ContactsListComponent } from './components/contacts/contacts-list/contacts-list.component';
 import { ContactsDetailsComponent } from './components/contacts/contacts-details/contacts-details.component';
+import { ContactsContainerComponent } from './components/contacts/contacts-container/contacts-container.component';
 
 const routes: Routes = [
   {
@@ -24,16 +24,9 @@ const routes: Routes = [
       },
       {
         path: 'contacts',
-        component: ContactsListComponent,
+        component: ContactsContainerComponent,
         data: {
           title: 'Contacts'
-        }
-      },
-      {
-        path: 'contacts/:id',
-        component: ContactsDetailsComponent,
-        data: {
-          title: 'Contact details page'
         }
       }
     ]

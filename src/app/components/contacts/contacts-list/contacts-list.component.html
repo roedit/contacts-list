@@ -1,3 +1,6 @@
-<p>
-  contacts-list works!
-</p>
+<mat-list>
+    <mat-list-item *ngFor="let contact of contacts" (click)="selectContact(contact)">
+      <img matListAvatar src="{{contact.avatar}}" alt="{{contact.first_name}} {{contact.last_name}}">
+      <h3 matLine> {{contact.first_name}} {{contact.last_name}} </h3>
+    </mat-list-item>
+  </mat-list>

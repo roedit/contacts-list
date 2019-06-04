@@ -52,7 +52,6 @@ Routes are defined at the root level <br/>
     <li>Setup material ui</li>
     <li>Load and display the list</li>
     <li>Display the details</li>
-    <li>Setup the navigation</li>
 </ol>
 
 ## Further help

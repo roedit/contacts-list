@@ -1,0 +1,22 @@
+.form {
+    display: flex;
+    align-items: center;
+
+    dl {
+        flex-grow: 2;
+        border-right: 1px solid #cccccc;
+    }
+}
+.form-fild {
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+
+    button {
+        margin: 10px;
+    }
+}

@@ -1,3 +1,23 @@
-<p>
-  contacts-details works!
-</p>
+<div *ngIf="contact">
+  <h3 class="name">{{contact.first_name}} {{contact.last_name}}</h3>
+
+  <div class="address-container" *ngIf="enableAdd">
+    <div class="addresses" *ngIf="addresses && addresses.length === 0">
+      No address registered for this user
+    </div>
+    
+    <div class="addresses" *ngIf="addresses && addresses.length > 0">
+      <div class="address" *ngFor="let address of addresses">
+          <mat-icon class="icon">delete</mat-icon>
+          <p>{{address.street1}}, {{address.street2}}, {{address.town}}, {{address.country | countries}}</p>
+      </div>
+    </div>
+  </div>
+
+  <app-address-form *ngIf="!enableAdd" (close)="enableAdd = !enableAdd" (save)="addAddress($event)"></app-address-form>
+  
+
+  <button class="add-button" mat-raised-button *ngIf="enableAdd" (click)="enableAdd = !enableAdd">
+    <mat-icon>add</mat-icon> Add Address
+  </button>
+</div>

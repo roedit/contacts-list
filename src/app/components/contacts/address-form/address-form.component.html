@@ -1,3 +1,57 @@
-<p>
-  address-form works!
-</p>
+<form class="form" [formGroup]="addressForm" (ngSubmit)="onFormSubmit(addressForm.value)">
+  <dl>
+    <dt>Street 1</dt>
+    <dd class="form-fild">
+      <mat-form-field>
+        <input matInput formControlName="street1" autofocus required>
+        <mat-error>
+          <p *ngIf="!addressForm.get('street1').valid && addressForm.get('street1').touched">
+            Please add first address line
+          </p>
+        </mat-error>
+      </mat-form-field>
+    </dd>
+    <dt>Street 2</dt>
+    <dd class="form-fild">
+      <mat-form-field>
+        <input matInput formControlName="street2" required>
+        <mat-error>
+          <p *ngIf="!addressForm.get('street2').valid && addressForm.get('street2').touched">
+            Please add second address line
+          </p>
+        </mat-error>
+      </mat-form-field>
+    </dd>
+    <dt>Town</dt>
+    <dd class="form-fild">
+      <mat-form-field>
+        <input matInput formControlName="town" required>
+        <mat-error>
+          <p *ngIf="!addressForm.get('town').valid && addressForm.get('town').touched">
+            Please add town
+          </p>
+        </mat-error>
+      </mat-form-field>
+    </dd>
+    <dt>Country</dt>
+    <dd class="form-fild">
+      <mat-form-field>
+        <mat-select formControlName="country">
+          <mat-option *ngFor="let country of countries" [value]="country.iso2">
+            {{country.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </dd>
+  </dl>
+
+  <div class="buttons">
+    <button mat-raised-button type="submit">
+      <mat-icon>check</mat-icon>
+    </button>
+    
+    <button mat-raised-button (click)="close.emit()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</form>
